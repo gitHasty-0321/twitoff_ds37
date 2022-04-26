@@ -11,6 +11,7 @@ secret = getenv('TWITTER_API_KEY_SECRET')
 TWITTER_AUTH = tweepy.OAuthHandler(key, secret)
 TWITTER = tweepy.API(TWITTER_AUTH)
 
+
 def add_or_update_user(username):
 
     try:
@@ -20,15 +21,17 @@ def add_or_update_user(username):
 
         # If there is no user in the database then create one
         # If there IS a user in the database, let's have that be our db_user
-        db_user = (User.query.get(twitter_user.id) or User(id=twitter_user.id, username=username))
+        db_user = (User.query.get(twitter_user.id)
+                   or User(id=twitter_user.id,
+                   username=username))
 
         # Add User to the DataBase if they didn't already exist
         DB.session.add(db_user)
 
         # Get all the tweets of added user
-        tweets = twitter_user.timeline(count=200, 
-                                       exclude_replies=True, 
-                                       include_rts=False, 
+        tweets = twitter_user.timeline(count=200,
+                                       exclude_replies=True,
+                                       include_rts=False,
                                        tweet_mode='extended',
                                        since_id=db_user.newest_tweet_id)
 
@@ -37,11 +40,15 @@ def add_or_update_user(username):
 
         # Add all the tweets to the DataBase session
         for tweet in tweets:
+
             tweet_vector = vectorize_tweet(tweet.full_text)
-            db_tweet = Tweet(id=tweet.id, 
-                             text=tweet.full_text[:300], 
+
+            db_tweet = Tweet(id=tweet.id,
+                             text=tweet.full_text[:300],
                              vect=tweet_vector)
+
             db_user.tweets.append(db_tweet)
+
             DB.session.add(db_tweet)
 
     except Exception as e:
@@ -52,7 +59,9 @@ def add_or_update_user(username):
         # Save (possibly New User) and/or tweets to the database
         DB.session.commit()
 
+
 nlp = spacy.load('my_spacy_model/')
+
 
 def vectorize_tweet(tweet_text):
     return nlp(tweet_text).vector
