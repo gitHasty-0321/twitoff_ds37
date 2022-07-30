@@ -7,3 +7,10 @@
 *  Stores the embedded tweets in a SQLAlchemy Database.
 *  Tweet data is fitted to a Scikit-Learn Logistic Regression model to perform predictions.
 *  Finally data is then serialized (pickled) to display results for online use.  
+
+
+# Progress in Motion:
+
+*  Incorporating Redis for caching to mitigate performance issues
+*  Improve UI using Bootstrap or JQuery
+*  Add more fields of interest/diversify model functionality
