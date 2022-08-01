@@ -4,16 +4,16 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-flask = "*"
-jinja2 = "*"
-flask-sqlalchemy = "*"
-tweepy = "*"
-spacy = "*"
-gunicorn = "*"
-python-dotenv = "*"
-scikit-learn = "*"
+flask = 2.1.3
+jinja2 = 3.1.2
+flask-sqlalchemy = 2.5.1
+tweepy = 4.10.0
+spacy = 3.4.1
+gunicorn = 20.1.0
+python-dotenv = 0.20.0
+scikit-learn = 1.1.1
 
 [dev-packages]
 
 [requires]
-python_version = "3.10"
+python_version = 3.9.12
