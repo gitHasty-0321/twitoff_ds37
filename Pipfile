@@ -9,6 +9,7 @@ jinja2 = "*"
 flask-sqlalchemy = "*"
 tweepy = "*"
 spacy = "*"
+gunicorn = "*"
 python-dotenv = "*"
 scikit-learn = "*"
 
