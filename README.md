@@ -11,6 +11,8 @@
 
 # Progress in Motion:
 
+*  Implement BERT Googles Transformer and Run binary classification for current application
+*  Enhance visualizations could scale up problem and then use live data feed
 *  Incorporating Redis for caching to mitigate performance issues
 *  Improve UI using Bootstrap or JQuery
 *  Add more fields of interest/diversify model functionality
