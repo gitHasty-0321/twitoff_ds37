@@ -1,7 +1,10 @@
 from flask import Flask, render_template, request
-from .models import DB, User, Tweet
+from .models import DB
+from .models import User
+from .models import Tweet
 from .twitter import add_or_update_user
-from .predict import User, predict_user
+from .predict import User 
+from .predict import predict_user
 
 
 def create_app():
@@ -12,10 +15,13 @@ def create_app():
     """
     # __name__ is the name of the current path module
     app = Flask(__name__)
-
+    
+    # Tell app where to find database
+    ## configuring by registering database with the app
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
     app.config['SQLALCHEMY_TRACK_MODIFICATION'] = False
 
+    # Finally CONNECT
     DB.init_app(app)
 
     @app.route('/')

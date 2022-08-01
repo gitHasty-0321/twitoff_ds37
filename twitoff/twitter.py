@@ -1,9 +1,12 @@
-from os import getenv
 import tweepy
-from .models import DB, User, Tweet
 import spacy
+from os import getenv
+from .models import DB
+from .models import Tweet
+from .models import User
 
 # Getting our environment variables
+# API KEYS
 key = getenv('TWITTER_API_KEY')
 secret = getenv('TWITTER_API_KEY_SECRET')
 
@@ -51,16 +54,16 @@ def add_or_update_user(username):
 
             DB.session.add(db_tweet)
 
-    except Exception as e:
-        print(f"Error Processing {username}: {e}")
-        raise e
+    except Exception as error:
+        print(f"Error Processing {username}: {error}")
+        raise error
 
     else:
         # Save (possibly New User) and/or tweets to the database
         DB.session.commit()
 
 
-nlp = spacy.load('my_spacy_model/')
+nlp = spacy.load('C:\\Users\\steve\\tweepy\\Twitter-Analysis-App\\my_model\\')
 
 
 def vectorize_tweet(tweet_text):

@@ -1,0 +1,46 @@
+    After importing and instantiating sqlalchemy we create
+a class User(DB.Model): which is in plain english is our
+User class that is inheriting from our database model which 
+allows it to do . . .a lil' bit of magic. 
+
+    The we make an attribute within that class. 
+The first being 'id' which is a Big Integer and 
+it is a primary key. The second is 'username' stored 
+as a string.  
+
+            class User(DB.Model):
+                1. id ---> [BigInt, primary_key=True]
+                2. username ---> [String, nullable=False]
+
+
+    We make a class so that Sqlalchemy can take our python code 
+and interpret it for us. 
+
+    Running the line: "steven = User(id=1, username='stev0')" automatically
+adds me as a new user to the DataBase.  :)We can then query that user by calling 
+on the steven variable.
+
+
+    NEXT CLASS we make is our Tweet class which again inherits from 
+DB.Model. And, like before we'll begin by adding the 'id' attribute.
+Which will maintain the same structure and contents. Following that we 
+add the 'text' attribute which will be stored as Unicode(300)? Thirdly we 
+add 'user_id' which is a BigInteger and also our first instance of a FOREIGN KEY. 
+It lives in the User class and within that class it's referred to as 'id'. Given the 
+presence of this FOREIGN KEY a new stipulation is implemented. That is for every Tweet
+we MUST HAVE A USER.  
+
+            class Tweet(DB.Model):
+                1. id ---> [BigInt, primary_key=True]
+                2. text ---> [Unicode(300))]
+                3. user_id ---> [BigInt, ForeignKey, nullable=False]
+           />   4. user ---> RELATIONSHIP('User', backref=DB.backref('tweets', lazy=True))
+          |
+    Number four creates a relationship between user and tweet. That is a one to many
+for One User can have Many tweets. With that said it wouldn't be copesetic if each 
+tweet weren't allowed a User. And, so it is.  
+
+
+
+I. USER TABLE
+II. TWEET TABLE
