@@ -63,7 +63,7 @@ def add_or_update_user(username):
         DB.session.commit()
 
 
-nlp = spacy.load('C:\\Users\\steve\\tweepy\\Twitter-Analysis-App\\my_model\\')
+nlp = spacy.load('C:\\Users\\steve\\tweepy\\TweetyPy\\my_model')
 
 
 def vectorize_tweet(tweet_text):

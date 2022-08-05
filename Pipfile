@@ -6,6 +6,14 @@ name = "pypi"
 [packages]
 spacy = "*"
 gunicorn = "*"
+flask = "*"
+flask-sqlalchemy = "*"
+jinja2 = "*"
+python-dotenv = "*"
+tweepy = "*"
+itsdangerous = "*"
+"flask.cli" = "*"
+markupsafe = "*"
 
 [dev-packages]
 

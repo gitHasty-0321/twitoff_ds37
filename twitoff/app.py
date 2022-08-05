@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from .models import DB
+import os
 from .models import User
 from .models import Tweet
 from .twitter import add_or_update_user
@@ -14,8 +15,9 @@ def create_app():
 
     """
     # __name__ is the name of the current path module
-    app = Flask(__name__)
+    app = Flask(__name__, instance_relative_config=True)
     
+       
     # Tell app where to find database
     ## configuring by registering database with the app
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
