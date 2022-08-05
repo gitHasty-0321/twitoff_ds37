@@ -1,18 +1,13 @@
-# Twitter Analysis App: Who tweeted it?
+# DS-Unit-3-Sprint-3-Productization-and-Cloud
+Building a real deployed full-stack application, backed by Data Science
+--------------------
 
-*  This application allows for a client to use a predictive model to determine which user is more likely to have tweeted a given text.
-*  Framework development done using Flask-Python.
-*  Queries Twitter API (tweepy).
-*  Implements word2vect using SpaCy Natural Language Processing model to create embeddings from the soured tweet text.
-*  Stores the embedded tweets in a SQLAlchemy Database.
-*  Tweet data is fitted to a Scikit-Learn Logistic Regression model to perform predictions.
-*  Finally data is then serialized (pickled) to display results for online use.  
+*Note* - assignments this week are all steps in a larger week-long project. They
+are to be worked on in a repo you make with your own account, as instructed in
+the first day. You should still fork this repo, and open a PR where you add a
+`work_notes.md` file that includes a link to your project repo. You should then
+update `work_notes.md` each day with the following:
 
-
-# Progress in Motion:
-
-*  Implement BERT Googles Transformer and Run binary classification for current application
-*  Enhance visualizations could scale up problem and then use live data feed
-*  Incorporating Redis for caching to mitigate performance issues
-*  Improve UI using Bootstrap or JQuery
-*  Add more fields of interest/diversify model functionality
+- What went well (in the context of working on the assignment) today?
+- What was particularly interesting or surprising about the topic(s) today?
+- What was the most challenging part of the work today, and why?
