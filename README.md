@@ -16,3 +16,5 @@ ________________________________________________________________________________
 ## twitter.py Natural Language Processing
 ![image](https://user-images.githubusercontent.com/59450769/183061798-037c9198-cc9e-4b36-b102-caf37e05bfef.png)
 
+## Deployed Preview
+![Screenshot 2022-08-05 062950](https://user-images.githubusercontent.com/59450769/183062423-09704f72-837f-411c-91f9-138223f2eac5.png)
